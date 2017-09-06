@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8">
+    <title>Google 翻译</title>
+    
+    <!--  定义js函数  -->
+    <script type="text/javascript">
+        function printHelloWorld()
+        {
+            window.webkit.messageHandlers.jsObser.postMessage({methodName:"sayHello"});
+        }
+    </script>
+    <script type="text/javascript">
+        function test(a)
+        {
+            window.webkit.messageHandlers.jsObser.postMessage({methodName:"sayHi:",goodId:a});
+        }
+    </script>
+        
+
+    
+    <!--  定义js函数  -->
+    <script type="text/javascript">
+        function test3(a,b)
+        {
+            alert("我是被OC调用的js方法" + a + b)
+        }
+    </script>
+    
+</head>
+<body>
+    <br /><br /><br /><br />
+
+    <!-- 创建一个按钮，点击就调用  printHelloWorld()  函数 -->
+    <button onclick="printHelloWorld()" style="width:80%;height:60px;font-size:30px">WKWebView  无参数</button>
+    
+    
+    <br/><br/><br/>
+    <!--  创建一个按钮，点击就调用printAandB()方法  -->
+    <button onclick="test(3306)" style="width:80%;height:60px;font-size:30px">WKWebView  有参数</button>
+    
+</body>
+</html>
